@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { StyledForm, StyledButton } from './ContactForm.styled';
 import styles from '../../index.module.css';
 import { useDispatch } from 'react-redux';
-import { addContact } from 'components/redux/operations';
+import { addContact } from 'redux/operations';
 
 export function ContactForm() {
   const [name, setName] = useState('');

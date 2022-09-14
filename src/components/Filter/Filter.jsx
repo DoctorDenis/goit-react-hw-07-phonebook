@@ -1,12 +1,12 @@
-import React from "react";
-import { StyledInput } from "./Filter.styled";
-import { useDispatch } from "react-redux";
-import { changeFilterInput } from "components/redux/actions";
+import React from 'react';
+import { StyledInput } from './Filter.styled';
+import { useDispatch } from 'react-redux';
+import { changeFilterInput } from 'redux/actions';
 
 export function Filter() {
   const dispatch = useDispatch();
 
-  const inputChangeHandler = (event) => {
+  const inputChangeHandler = event => {
     const value = event.target.value;
     dispatch(changeFilterInput(value));
   };

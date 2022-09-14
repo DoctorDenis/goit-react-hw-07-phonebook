@@ -15,7 +15,10 @@ export const contactsReducer = createReducer([], {
 
 export const errorReducer = createReducer(null, {
   [getContacts.rejected]: (state, action) => action.payload,
-  [addContact.rejected]: (state, action) => action.payload,
+  [addContact.rejected]: (state, action) => {
+    alert(action.error.message);
+    return action.error;
+  },
 });
 
 export const loadingReducer = createReducer(false, {

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { StyledUl } from './ContactList.styled';
 import { ContactItem } from '../ContactItem/ContactItem';
 import { useSelector, useDispatch } from 'react-redux';
-import * as operations from '../redux/operations';
+import * as operations from '../../redux/operations';
 
 export function ContactList() {
   const contacts = useSelector(state => state.contacts.items);
@@ -21,9 +21,10 @@ export function ContactList() {
     <>
       {loading && <h3>Loading ... Please wait</h3>}
       <StyledUl>
-        {filteredContacts.map(contact => (
-          <ContactItem key={contact.id} contact={contact} />
-        ))}
+        {!loading &&
+          filteredContacts.map(contact => (
+            <ContactItem key={contact.id} contact={contact} />
+          ))}
       </StyledUl>
     </>
   );
